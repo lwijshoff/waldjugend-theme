@@ -17,6 +17,6 @@
  */
 
 $horst = THEME_TAGLINE; // e.g. "Horst Kleve"
-$lvb = 'Landesverband NRW e.V.'; // e.g. "Deutschen Waldjugend NRW e.V."
-$lvb_url = 'www.waldjugend-nrw.de'; // e.g. "www.waldjugend-nrw.de"
+// $lvb = "Landesverband NRW e.V."; // e.g. "Deutschen Waldjugend NRW e.V."
+// $lvb_url = "www.waldjugend-nrw.de"; // e.g. "www.waldjugend-nrw.de"
 ?>
