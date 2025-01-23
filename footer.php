@@ -32,7 +32,7 @@
 			        <?php include 'config.php'; ?>
                     <p align="center">
                         Die Waldjugend <?php echo $horst; ?> ist eine Ortsgruppe der 
-                        <a href="<?php echo $lvb_url; ?>"><?php echo $lvb; ?></a> - 
+                        <a href="//<?php echo $lvb_url; ?>"><?php echo $lvb; ?></a> - 
                         <a href="/impressum">Impressum</a>
                     </p>
 			    </div>
