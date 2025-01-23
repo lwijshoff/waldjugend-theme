@@ -41,7 +41,7 @@
     				<div style="clear:both;"></div>
     				<a href="/">
         				<h1>
-                            <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-header.png" alt="LogoDWJ">
+                            <img class="logo" src="/wp-content/themes/waldjugend/assets/icons/Logo-header.png" alt="LogoDWJ">
                         </h1>
                     </a>
                     <div id="header_description">
