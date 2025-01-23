@@ -8,7 +8,8 @@
  * the database and can be used throughout the theme.
  *
  * To customize, modify the variables below as needed.
- * But please note that if you modify them in this file, they will get overwritten if you update the theme.
+ * But please note that if you modify them in this file, they will get overwritten if you update the theme manually.
+ * For a correct way form of updating the theme refer to https://github.com/lwijshoff/waldjugend-installation
  *
  * @package waldjugend-theme
  * @since 1.4
