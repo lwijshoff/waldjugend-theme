@@ -5,9 +5,9 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Cryout Creations
- * @subpackage nirvana
- * @since nirvana 0.5
+ * @package waldjugend-theme
+ * @since 1.4
+ * @author Leonard Wijshoff
  */
  ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

@@ -3,9 +3,10 @@
  * The Sidebar containing the primary and secondary widget areas.
  * 
  * Customized by Leonard Wijshoff
- * @package Cryout Creations
- * @subpackage nirvana
- * @since nirvana 0.5
+ * 
+ * @package waldjugend-theme
+ * @since 1.4
+ * @author Leonard Wijshoff
  */
 
 /* This  retrieves  admin options. */

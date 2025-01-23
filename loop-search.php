@@ -3,9 +3,10 @@
  * The template for displaying Search results pages.
  *
  * Customized by Leonard Wijshoff
- * @package Cryout Creations
- * @subpackage nirvana
- * @since Nirvana 1.0
+ * 
+ * @package waldjugend-theme
+ * @since 1.4
+ * @author Leonard Wijshoff
  */
 
 get_header(); ?>

@@ -5,9 +5,9 @@
  * Contains the closing of the id=main div and all content
  * after.  Calls sidebar-footer.php for bottom widgets.
  *
- * @package Cryout Creations
- * @subpackage nirvana
- * @since nirvana 0.5
+ * @package waldjugend-theme
+ * @since 1.4
+ * @author Leonard Wijshoff
  */
 ?>	<div style="clear:both;"></div>
 	</div> <!-- #forbottom -->
