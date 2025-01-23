@@ -30,8 +30,11 @@
 			            <img class="aufinsabenteuer" src="/wp-content/themes/waldjugend/assets/icons/Logo-footer.png" alt="FooterDWJ" width="250">
 			        </a>
 			        <?php include 'config.php'; ?>
-			        <p align="center">Die Waldjugend <?php echo $horst; ?> ist eine Ortsgruppe der <a href="//www.waldjugend-nrw.de/">Deutschen Waldjugend NRW e.V.</a> - <a href="/impressum">Impressum</a>
-			        </p>
+                    <p align="center">
+                        Die Waldjugend <?php echo $horst; ?> ist eine Ortsgruppe der 
+                        <a href="//<?php echo $lvb_url; ?>"><?php echo $lvb; ?></a> - 
+                        <a href="/impressum">Impressum</a>
+                    </p>
 			    </div>
 			    
 			</div> <!-- #footer2-inside -->

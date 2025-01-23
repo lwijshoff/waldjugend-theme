@@ -18,7 +18,7 @@ function waldjugend_custom_login_logo_url() {
 add_filter('login_headerurl', 'waldjugend_custom_login_logo_url');
 
 // Fetch and set tagline dynamically, but only for config.php
-function my_theme_set_config() {
+function waldjugend_set_config() {
     // Only define the constant in config.php
     if (basename(__FILE__) === 'config.php') {
         // Get the tagline (blogdescription) from the database
@@ -28,5 +28,5 @@ function my_theme_set_config() {
         define('THEME_TAGLINE', $tagline);
     }
 }
-add_action('after_setup_theme', 'my_theme_set_config');
+add_action('after_setup_theme', 'waldjugend_set_config');
 ?>
