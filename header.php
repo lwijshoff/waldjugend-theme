@@ -5,9 +5,9 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Cryout Creations
- * @subpackage nirvana
- * @since nirvana 0.5
+ * @package waldjugend-theme
+ * @since 1.4
+ * @author Leonard Wijshoff
  */
  ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -41,7 +41,7 @@
     				<div style="clear:both;"></div>
     				<a href="/">
         				<h1>
-                            <img class="logo" src="/wp-content/themes/waldjugend/assets/icons/Logo-header.png" alt="LogoDWJ">
+                            <img class="logo" src="/wp-content/themes/waldjugend-theme/assets/icons/Logo-header.png" alt="LogoDWJ">
                         </h1>
                     </a>
                     <div id="header_description">

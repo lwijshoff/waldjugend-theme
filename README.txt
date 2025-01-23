@@ -4,9 +4,7 @@ Copyright 2021-present Leonard Wijshoff
 Based on Nirvana WordPress Theme, Copyright 2014-2021 Cryout Creations
 
 Author: Leonard Wijshoff
-Requires at least: 4.5
-Tested up to: 6.4
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -29,7 +27,7 @@ along with this program. If not, see http://www.gnu.org/copyleft/gpl.html
 
 == Third Party Resources ==
 
-Waldjugend inherits third-party resources bundled with the Nirvana theme:
+Waldjugend adds new resources and inherits third-party resources bundled with the Nirvana theme:
 
 Nivo Slider, Copyright Gilbert Pellegrom
 Nivo Slider is licensed under the terms of the MIT license
@@ -88,6 +86,18 @@ https://pixabay.com/en/wild-teasel-fuller-s-teasel-plant-3503141/
 
 All other images bundled with the theme (used in the demo presentation page and admin section, as well as the social icons) are created by Cryout Creations and released with the theme under GPLv3 as well.
 
+== Newly Added Assets ==
+
+All of the newly added assets found in this child-theme are property of their respective owners, they can be used freely for Waldjugend purposes only:
+
+Coporate Design, Copyright Deutsche Waldjugend der Schutzgemeinschaft Deutscher Wald - Bundesverband e.V.
+https://waldjugend.de/holzlaufwerk/corporate-design/design
+
+Other Images, Copyright Leonard Wijshoff
+https://github.com/lwijshoff/waldjugend-theme/blob/master/assets/background-4k.jpg
+https://github.com/lwijshoff/waldjugend-theme/blob/master/assets/background-scaled.jpg
+https://github.com/lwijshoff/waldjugend-theme/blob/master/assets/background.jpg
+https://github.com/lwijshoff/waldjugend-theme/blob/master/screenshot.png
 
 == Original Translation Contributors ==
 

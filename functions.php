@@ -11,9 +11,9 @@ function waldjugend_custom_login() {
 }
 add_action('login_head', 'waldjugend_custom_login');
 
-// Change login logo URL to homepage URL
-function waldjugend_custom_login_logo_url() {
-    return home_url();
+// Define THEME_TAGLINE from database
+function define_waldjugend_tagline() {
+    define('THEME_TAGLINE', get_option('blogdescription', 'default'));
 }
-add_filter('login_headerurl', 'waldjugend_custom_login_logo_url');
+add_action('after_setup_theme', 'define_waldjugend_tagline');
 ?>
