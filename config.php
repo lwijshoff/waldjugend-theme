@@ -9,7 +9,7 @@
  *
  * To customize, modify the variables below as needed.
  * Please note that if you update this theme manually, they will get overwritten.
- * For a correct way of updating this theme refer to https://github.com/lwijshoff/waldjugend-installation
+ * For a correct way of updating this theme refer to https://github.com/lwijshoff/waldjugend-installation?tab=readme-ov-file#updating-the-waldjugend-theme
  *
  * @package waldjugend-theme
  * @since 1.4
