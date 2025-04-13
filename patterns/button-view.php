@@ -16,7 +16,7 @@
     <!-- wp:button {"className":"is-style-outline"} -->
     <div class="wp-block-button is-style-outline">
         <a class="wp-block-button__link wp-element-button" href="/?post_type=post">
-            <img class="wp-image-776" style="width: 32px; vertical-align: middle;" src="<?php echo get_stylesheet_directory_uri(); ?>'/assets/icons/auge_js.svg'); ?>" alt=""> 
+            <img class="wp-image-776" style="width: 32px; vertical-align: middle;" src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/auge_js.svg'); ?>" alt=""> 
             View more
         </a>
     </div>
