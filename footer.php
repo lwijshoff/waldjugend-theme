@@ -28,7 +28,6 @@
 			    <div id="site-copyright">
 			        <a href="/">
                         <img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="FooterDWJ" width="250">
-                        <!-- Comment here to see if it actually updated (for testing) -->
 			        </a>
 			        <?php include 'config.php'; ?>
                     <p align="center">
