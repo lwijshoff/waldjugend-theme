@@ -29,10 +29,14 @@
 			        <a href="/">
                         <img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="FooterDWJ" width="250">
 			        </a>
-			        <?php include 'config.php'; ?>
+			        <?php
+                    $horst = function_exists('waldjugend_get_config') ? waldjugend_get_config('horst') : 'Horst Kleve';
+                    $lvb = function_exists('waldjugend_get_config') ? waldjugend_get_config('lvb') : 'Landesverband NRW e.V.';
+                    $lvb_url = function_exists('waldjugend_get_config') ? waldjugend_get_config('lvb_url') : 'www.waldjugend-nrw.de';
+                    ?>
                     <p align="center">
-                        Die Waldjugend <?php echo $horst; ?> ist eine Ortsgruppe der 
-                        <a href="//<?php echo $lvb_url; ?>"><?php echo $lvb; ?></a> - 
+                        Die Waldjugend <?php echo esc_html($horst); ?> ist eine Ortsgruppe der 
+                        <a href="//<?php echo esc_attr($lvb_url); ?>"><?php echo esc_html($lvb); ?></a> - 
                         <a href="/impressum">Impressum</a>
                     </p>
 			    </div>

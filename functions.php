@@ -11,18 +11,11 @@ function waldjugend_custom_login_styles() {
 }
 add_action('login_head', 'waldjugend_custom_login_styles');
 
+// Custom Login Logo URL
 function waldjugend_login_logo_url() {
     return home_url();
 }
 add_filter('login_headerurl', 'waldjugend_login_logo_url');
-
-// Define Theme Constants
-function waldjugend_define_constants() {
-    if (!defined('THEME_TAGLINE')) {
-        define('THEME_TAGLINE', get_option('blogdescription', 'default'));
-    }
-}
-add_action('after_setup_theme', 'waldjugend_define_constants');
 
 // Plugin/Theme Update Checker
 require 'includes/plugin-update-checker/plugin-update-checker.php';
@@ -34,6 +27,5 @@ $UpdateChecker = PucFactory::buildUpdateChecker(
 	'waldjugend-theme'
 );
 
-//Set the branch that contains the stable release.
+// Set the branch that contains the stable release.
 $UpdateChecker->setBranch('main');
-?>
