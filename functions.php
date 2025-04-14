@@ -41,9 +41,9 @@ require 'inc/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $UpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/lwijshoff/waldjugend-plugin/',
+	'https://github.com/lwijshoff/waldjugend-theme/',
 	__FILE__,
-	'waldjugend-plugin'
+	'waldjugend-theme'
 );
 
 //Set the branch that contains the stable release.
