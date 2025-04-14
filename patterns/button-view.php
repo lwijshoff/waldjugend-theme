@@ -1,27 +1,24 @@
 <?php
 /**
- * Title: Button View
- * Slug: waldjugend/button-view
- * Categories: Buttons
- * Keywords: button, view, icon
- * 
- * @package waldjugend-theme
- * @since 1.5
- * @author Leonard Wijshoff
+ * Title: Fancy Centered Button
+ * Slug: waldjugend-theme/fancy-button
+ * Categories: waldjugend-buttons
+ * Block Types: core/buttons
+ * Keywords: button, centered, call to action
  */
-?>
 
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-buttons">
-    <!-- wp:button {"className":"is-style-outline"} -->
-    <div class="wp-block-button is-style-outline">
-        <a class="wp-block-button__link wp-element-button" href="/?post_type=post">
-            <img class="wp-image-776" style="width: 32px; vertical-align: middle;" src="<?php echo get_stylesheet_directory_uri(); ?>'/assets/icons/auge_js.svg'); ?>" alt=""> 
-            View more
-        </a>
-    </div>
-    <!-- /wp:button -->
-</div>
-<!-- /wp:buttons -->
-
-<!-- TODO: make this work? -->
+return [
+    'title'      => __('Fancy Centered Button', 'waldjugend-theme'),
+    'categories' => ['waldjugend-buttons'],
+    'content'    => '
+        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons">
+            <!-- wp:button {"className":"is-style-outline"} -->
+            <div class="wp-block-button is-style-outline">
+                <a class="wp-block-button__link">' . esc_html__('Click Me!', 'waldjugend-theme') . '</a>
+            </div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+    ',
+];
