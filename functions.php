@@ -5,21 +5,6 @@ function waldjugend_enqueue_parent_styles() {
 }
 add_action('wp_enqueue_scripts', 'waldjugend_enqueue_parent_styles');
 
-// Load Block Patterns
-function waldjugend_register_block_patterns() {
-    $pattern_dir = get_template_directory() . '/patterns';
-
-    foreach (glob($pattern_dir . '/*.php') as $file) {
-        register_block_pattern_from_file($file);
-    }
-}
-add_action('init', 'waldjugend_register_block_patterns');
-
-register_block_pattern_category(
-    'waldjugend-buttons',
-    ['label' => __('Waldjugend Buttons', 'waldjugend-theme')]
-);
-
 // Custom Login Styling
 function waldjugend_custom_login_styles() {
     echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/assets/css/waldjugendlogin.css" />';
