@@ -40,7 +40,7 @@ function waldjugend_define_constants() {
 add_action('after_setup_theme', 'waldjugend_define_constants');
 
 // Plugin/Theme Update Checker
-require_once get_template_directory() . '/inc/plugin-update-checker/plugin-update-checker.php';
+require '/inc/plugin-update-checker/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
