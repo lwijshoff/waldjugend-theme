@@ -35,4 +35,17 @@ function define_waldjugend_tagline() {
     define('THEME_TAGLINE', get_option('blogdescription', 'default'));
 }
 add_action('after_setup_theme', 'define_waldjugend_tagline');
+
+// Check for updates
+require 'inc/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$UpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/lwijshoff/waldjugend-plugin/',
+	__FILE__,
+	'waldjugend-plugin'
+);
+
+//Set the branch that contains the stable release.
+$UpdateChecker->setBranch('dev');
 ?>
