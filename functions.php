@@ -5,9 +5,9 @@ function waldjugend_enqueue_parent_styles() {
 }
 add_action('wp_enqueue_scripts', 'waldjugend_enqueue_parent_styles');
 
-// Load Block Patterns
+// Load Block Patterns from child theme
 function waldjugend_register_block_patterns() {
-    $pattern_dir = get_template_directory() . '/patterns';
+    $pattern_dir = get_stylesheet_directory() . '/patterns'; // get_stylesheet_directory() for child theme
 
     foreach (glob($pattern_dir . '/*.php') as $file) {
         register_block_pattern_from_file($file);
@@ -15,14 +15,18 @@ function waldjugend_register_block_patterns() {
 }
 add_action('init', 'waldjugend_register_block_patterns');
 
-register_block_pattern_category(
-    'waldjugend-buttons',
-    ['label' => __('Waldjugend Buttons', 'waldjugend-theme')]
-);
+// Register custom category for block patterns
+function waldjugend_register_block_pattern_categories() {
+    register_block_pattern_category(
+        'waldjugend-buttons',
+        ['label' => __('Waldjugend Buttons', 'waldjugend-theme')]
+    );
+}
+add_action('init', 'waldjugend_register_block_pattern_categories');
 
 // Custom Login Styling
 function waldjugend_custom_login_styles() {
-    echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/css/waldjugendlogin.css" />';
+    echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/assets/css/waldjugendlogin.css" />';
 }
 add_action('login_head', 'waldjugend_custom_login_styles');
 
