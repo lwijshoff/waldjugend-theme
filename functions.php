@@ -38,4 +38,17 @@ function waldjugend_define_constants() {
     }
 }
 add_action('after_setup_theme', 'waldjugend_define_constants');
+
+// Plugin/Theme Update Checker
+require 'includes/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$UpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/lwijshoff/waldjugend-theme/',
+	__FILE__,
+	'waldjugend-theme'
+);
+
+//Set the branch that contains the stable release.
+$UpdateChecker->setBranch('main');
 ?>
