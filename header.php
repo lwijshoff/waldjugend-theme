@@ -45,7 +45,7 @@
                         </h1>
                     </a>
                     <?php
-                    $horst = function_exists('waldjugend_get_config') ? waldjugend_get_config('horst') : 'Horst Kleve';
+                    $horst = function_exists('waldjugend_get_config') ? waldjugend_get_config('horst') : 'Horst Musterstadt';
                     ?>
                     <div id="header_description">
                         <p>der Schutzgemeinschaft Deutscher Wald</p>

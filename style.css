@@ -1,15 +1,15 @@
-/*
- Theme Name:   Waldjugend
- Theme URI:    https://github.com/lwijshoff/waldjugend-theme/
- Description:  Ein child-theme von Nirvana, neu gestaltet für Waldjugend basierte Websites.
- Author:       Leonard Wijshoff
- Author URI:   https://github.com/lwijshoff
- Template:     nirvana
- Version:      1.5.0
- License:      GNU General Public License v3.0
- License URI:  http://www.gnu.org/licenses/gpl-3.0.html
- Text Domain:  waldjugend-theme
-*/
+/**
+ * Theme Name:   Waldjugend
+ * Theme URI:    https://github.com/lwijshoff/waldjugend-theme/
+ * Description:  Ein child-theme von Nirvana, neu gestaltet für Waldjugend basierte Websites.
+ * Author:       Leonard Wijshoff
+ * Author URI:   https://github.com/lwijshoff
+ * Template:     nirvana
+ * Version:      1.5.0
+ * License:      GNU General Public License v3.0
+ * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+ * Text Domain:  waldjugend-theme
+ */
 
 /* Root colors */
 :root {
