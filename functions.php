@@ -29,3 +29,29 @@ $UpdateChecker = PucFactory::buildUpdateChecker(
 
 // Set the branch that contains the stable release.
 $UpdateChecker->setBranch('main');
+
+// Enqueue Custom Styles with Dynamic Background Image
+function waldjugend_enqueue_styles() {
+    // Enqueue the main stylesheet
+    wp_enqueue_style('waldjugend-style', get_stylesheet_directory_uri() . '/assets/css/styles.css');
+
+    // Get the background image URL dynamically (child theme's assets)
+    $background_url = get_stylesheet_directory_uri() . '/assets/background-scaled.jpg';
+
+    // Inject the background image URL into the custom styles
+    $custom_css = "
+        body {
+            background-image: url('$background_url');
+            background-position: left top;
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    ";
+
+    wp_add_inline_style('waldjugend-style', $custom_css);
+}
+
+add_action('wp_enqueue_scripts', 'waldjugend_enqueue_styles');

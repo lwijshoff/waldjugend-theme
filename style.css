@@ -21,7 +21,6 @@
 
 /* No background margin for mobile */
 body {
-    background-image: url("/wp-content/themes/waldjugend-theme/assets/background-scaled.jpg");
     background-position: left top;
     background-size: auto;
     background-repeat: no-repeat;
