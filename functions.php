@@ -1,19 +1,31 @@
 <?php
-// Enqueue parent theme styles
-function enqueue_parent_styles() {
+// Load Parent Theme Styles
+function waldjugend_enqueue_parent_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 }
-add_action('wp_enqueue_scripts', 'enqueue_parent_styles');
+add_action('wp_enqueue_scripts', 'waldjugend_enqueue_parent_styles');
 
-// Custom login for theme
-function waldjugend_custom_login() {
-    echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/css/waldjugendlogin.css" />';
+// Custom Login Styling
+function waldjugend_custom_login_styles() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/assets/css/waldjugendlogin.css" />';
 }
-add_action('login_head', 'waldjugend_custom_login');
+add_action('login_head', 'waldjugend_custom_login_styles');
 
-// Define THEME_TAGLINE from database
-function define_waldjugend_tagline() {
-    define('THEME_TAGLINE', get_option('blogdescription', 'default'));
+// Custom Login Logo URL
+function waldjugend_login_logo_url() {
+    return home_url();
 }
-add_action('after_setup_theme', 'define_waldjugend_tagline');
-?>
+add_filter('login_headerurl', 'waldjugend_login_logo_url');
+
+// Plugin/Theme Update Checker
+require 'includes/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$UpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/lwijshoff/waldjugend-theme/',
+	__FILE__,
+	'waldjugend-theme'
+);
+
+// Set the branch that contains the stable release.
+$UpdateChecker->setBranch('main');

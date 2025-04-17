@@ -41,13 +41,15 @@
     				<div style="clear:both;"></div>
     				<a href="/">
         				<h1>
-                            <img class="logo" src="/wp-content/themes/waldjugend-theme/assets/icons/Logo-header.png" alt="LogoDWJ">
+                            <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-header.png" alt="LogoDWJ">
                         </h1>
                     </a>
+                    <?php
+                    $horst = function_exists('waldjugend_get_config') ? waldjugend_get_config('horst') : 'Horst Musterstadt';
+                    ?>
                     <div id="header_description">
                         <p>der Schutzgemeinschaft Deutscher Wald</p>
-                        <?php include 'config.php'; ?>
-                        <p><?php echo $horst; ?></p>
+                        <p><?php echo esc_html($horst); ?></p>
                     </div>
                 </div>
 			</div><!-- #branding -->
