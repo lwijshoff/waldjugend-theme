@@ -58,8 +58,6 @@
 			<nav id="<?php echo apply_filters( 'nirvana_mainnav_id', 'access' ) ?>" class="<?php echo apply_filters( 'nirvana_mainnav_class', 'jssafe' ) ?>" role="navigation">
 				<?php cryout_access_hook();?>
 			</nav><!-- #access -->
-
-
 		</div><!-- #masthead -->
 	</header><!-- #header -->
 </div><!-- #header-full -->
