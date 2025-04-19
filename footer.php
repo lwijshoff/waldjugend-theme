@@ -32,9 +32,13 @@
 			        </a>
                     <p align="center">
                         <?php
-                            $footerContent = waldjugend_generate_footer_html();
-                            echo $footerContent ? $footerContent : '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
-                            // You are herby permitted to change this with your own footer content or HTML.
+                            if (function_exists('waldjugend_generate_footer_html')) {
+                                $footerContent = waldjugend_generate_footer_html();
+                                echo $footerContent ? $footerContent : '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+                            } else {
+                                echo '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+                            }
+                            // You are hereby permitted to change this with your own footer content or HTML.
                         ?>
                     </p>
 			    </div>
