@@ -29,3 +29,57 @@ $UpdateChecker = PucFactory::buildUpdateChecker(
 
 // Set the branch that contains the stable release.
 $UpdateChecker->setBranch('main');
+
+// Enqueue Custom Styles with Dynamic Background Image
+function waldjugend_enqueue_styles() {
+    // Enqueue the main stylesheet
+    wp_enqueue_style('waldjugend-style', get_stylesheet_directory_uri() . '/assets/css/styles.css');
+
+    // Get the background image URL dynamically (child theme's assets)
+    $background_url = get_stylesheet_directory_uri() . '/assets/background-scaled.jpg';
+
+    // Inject the background image URL into the custom styles
+    $custom_css = "
+        body {
+            background-image: url('$background_url');
+            background-position: left top;
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    ";
+
+    wp_add_inline_style('waldjugend-style', $custom_css);
+}
+
+add_action('wp_enqueue_scripts', 'waldjugend_enqueue_styles');
+
+// Remove Default Search Widget from Right Sidebar
+function waldjugend_remove_default_search_widget() {
+    $sidebars_widgets = get_option('sidebars_widgets');
+
+    if (isset($sidebars_widgets['right-widget-area'])) {
+        $sidebars_widgets['right-widget-area'] = array_filter(
+            $sidebars_widgets['right-widget-area'],
+            fn($widget_id) => $widget_id !== 'block-2'
+        );
+        update_option('sidebars_widgets', $sidebars_widgets);
+    }
+}
+add_action('after_switch_theme', 'waldjugend_remove_default_search_widget');
+
+function waldjugend_theme_icon_shortcode($atts) {
+    $atts = shortcode_atts([
+        'src' => '',
+        'alt' => '',
+        'class' => '',
+        'style' => '',
+    ], $atts);
+
+    $url = get_stylesheet_directory_uri() . '/' . ltrim($atts['src'], '/');
+
+    return '<img src="' . esc_url($url) . '" alt="' . esc_attr($atts['alt']) . '" class="' . esc_attr($atts['class']) . '" style="' . esc_attr($atts['style']) . '">';
+}
+add_shortcode('theme_icon', 'waldjugend_theme_icon_shortcode');

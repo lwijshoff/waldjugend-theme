@@ -9,7 +9,8 @@
  * @since 1.4
  * @author Leonard Wijshoff
  */
-?>	<div style="clear:both;"></div>
+?>	
+    <div style="clear:both;"></div>
 	</div> <!-- #forbottom -->
 
 	<footer id="footer" role="contentinfo">
@@ -29,16 +30,17 @@
 			        <a href="/">
                         <img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="FooterDWJ" width="250">
 			        </a>
-			        <?php
-                    $horst = function_exists('waldjugend_get_config') ? waldjugend_get_config('horst') : 'Horst Musterstadt';
-                    $lvb = function_exists('waldjugend_get_config') ? waldjugend_get_config('lvb') : 'Landesverband Musterland e.V.';
-                    $lvb_url = function_exists('waldjugend_get_config') ? waldjugend_get_config('lvb_url') : 'www.waldjugend-musterland.de';
-                    ?>
                     <p align="center">
-                        Die Waldjugend <?php echo esc_html($horst); ?> ist eine Ortsgruppe der 
-                        <a href="//<?php echo esc_attr($lvb_url); ?>"><?php echo esc_html($lvb); ?></a> - 
-                        <a href="/impressum">Impressum</a>
-                    </p> <!-- TODO: Let this be customizable in the plugin entirely! -->
+                        <?php
+                            if (function_exists('waldjugend_generate_footer_html')) {
+                                $footerContent = waldjugend_generate_footer_html();
+                                echo $footerContent;
+                            } else {
+                                echo '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+                            }
+                            // You are hereby permitted to change this with your own footer content or HTML.
+                        ?>
+                    </p>
 			    </div>
 			    
 			</div> <!-- #footer2-inside -->

@@ -45,11 +45,15 @@
                         </h1>
                     </a>
                     <?php
-                    $horst = function_exists('waldjugend_get_config') ? waldjugend_get_config('horst') : 'Horst Musterstadt';
+                    if (function_exists('waldjugend_get_config')) {
+                        $headerTitle = waldjugend_get_config('horst');
+                    } else {
+                        $headerTitle = 'Horst Musterstadt';
+                    }
                     ?>
                     <div id="header_description">
                         <p>der Schutzgemeinschaft Deutscher Wald</p>
-                        <p><?php echo esc_html($horst); ?></p>
+                        <p><?php echo esc_html($headerTitle); ?></p>
                     </div>
                 </div>
 			</div><!-- #branding -->
@@ -58,8 +62,6 @@
 			<nav id="<?php echo apply_filters( 'nirvana_mainnav_id', 'access' ) ?>" class="<?php echo apply_filters( 'nirvana_mainnav_class', 'jssafe' ) ?>" role="navigation">
 				<?php cryout_access_hook();?>
 			</nav><!-- #access -->
-
-
 		</div><!-- #masthead -->
 	</header><!-- #header -->
 </div><!-- #header-full -->
