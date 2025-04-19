@@ -55,3 +55,8 @@ function waldjugend_enqueue_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'waldjugend_enqueue_styles');
+
+// Remove the default WordPress search widget
+add_action('widgets_init', function() {
+    unregister_widget('WP_Widget_Search');
+}, 11);
