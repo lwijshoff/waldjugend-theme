@@ -69,3 +69,8 @@ function waldjugend_remove_default_search_widget() {
     }
 }
 add_action('after_switch_theme', 'waldjugend_remove_default_search_widget');
+
+function waldjugend_theme_url_shortcode() {
+    return get_stylesheet_directory_uri();
+}
+add_shortcode('waldjugend_theme_url', 'waldjugend_theme_url_shortcode');
