@@ -34,7 +34,7 @@
                         <?php
                             if (function_exists('waldjugend_generate_footer_html')) {
                                 $footerContent = waldjugend_generate_footer_html();
-                                echo $footerContent ? $footerContent : '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+                                echo $footerContent;
                             } else {
                                 echo '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
                             }
