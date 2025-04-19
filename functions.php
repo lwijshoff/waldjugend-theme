@@ -70,7 +70,16 @@ function waldjugend_remove_default_search_widget() {
 }
 add_action('after_switch_theme', 'waldjugend_remove_default_search_widget');
 
-function waldjugend_theme_url_shortcode() {
-    return get_stylesheet_directory_uri();
+function waldjugend_theme_icon_shortcode($atts) {
+    $atts = shortcode_atts([
+        'src' => '',
+        'alt' => '',
+        'class' => '',
+        'style' => '',
+    ], $atts);
+
+    $url = get_stylesheet_directory_uri() . '/' . ltrim($atts['src'], '/');
+
+    return '<img src="' . esc_url($url) . '" alt="' . esc_attr($atts['alt']) . '" class="' . esc_attr($atts['class']) . '" style="' . esc_attr($atts['style']) . '">';
 }
-add_shortcode('waldjugend_theme_url', 'waldjugend_theme_url_shortcode');
+add_shortcode('theme_icon', 'waldjugend_theme_icon_shortcode');
