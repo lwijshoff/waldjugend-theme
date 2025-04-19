@@ -47,14 +47,13 @@
                     <?php
                     if (function_exists('waldjugend_get_config')) {
                         $headerTitle = waldjugend_get_config('horst');
-                        echo $headerTitle;
                     } else {
-                        echo 'Horst Musterstadt';
+                        $headerTitle = 'Horst Musterstadt';
                     }
                     ?>
                     <div id="header_description">
                         <p>der Schutzgemeinschaft Deutscher Wald</p>
-                        <p><?php echo esc_html($horst); ?></p>
+                        <p><?php echo esc_html($headerTitle); ?></p>
                     </div>
                 </div>
 			</div><!-- #branding -->
