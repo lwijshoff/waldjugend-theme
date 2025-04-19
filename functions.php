@@ -56,30 +56,16 @@ function waldjugend_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'waldjugend_enqueue_styles');
 
-add_action('wp_footer', function() {
-    $sidebars_widgets = wp_get_sidebars_widgets(); // Get all sidebar widgets
+// Remove Default Search Widget from Right Sidebar
+function waldjugend_remove_default_search_widget() {
+    $sidebars_widgets = get_option('sidebars_widgets');
 
-    // Check if the right sidebar has any widgets
     if (isset($sidebars_widgets['right-widget-area'])) {
-        foreach ($sidebars_widgets['right-widget-area'] as $widget_id) {
-            // If this is the block you're targeting
-            if ($widget_id === 'block-2') {  // Replace with the actual block ID
-                echo '<pre>';
-                echo "Widget ID: " . $widget_id . "\n\n";
-
-                // Get detailed widget data (block type and other metadata)
-                global $wp_registered_widgets;
-                if (isset($wp_registered_widgets[$widget_id])) {
-                    print_r($wp_registered_widgets[$widget_id]);
-                }
-
-                // You can also get the block's actual data if it's a block-based widget
-                $block = get_post_meta($widget_id, '_wp_block_metadata', true);
-                echo "Block Data:\n";
-                print_r($block);
-
-                echo '</pre>';
-            }
-        }
+        $sidebars_widgets['right-widget-area'] = array_filter(
+            $sidebars_widgets['right-widget-area'],
+            fn($widget_id) => $widget_id !== 'block-2'
+        );
+        update_option('sidebars_widgets', $sidebars_widgets);
     }
-}, 20);
+}
+add_action('after_switch_theme', 'waldjugend_remove_default_search_widget');
