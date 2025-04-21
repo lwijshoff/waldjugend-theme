@@ -3,7 +3,6 @@
 Based on [Nirvana WordPress Theme](https://www.cryoutcreations.eu/wordpress-themes/nirvana), &copy; Copyright 2014-2021 **Cryout Creations**
 
 **Author:** Leonard Wijshoff \
-**Stable tag:** 1.5.0 \
 **License:** GPLv3 \
 **License URI:** http://www.gnu.org/licenses/gpl.html 
 
@@ -11,6 +10,9 @@ Waldjugend is a child theme of Nirvana, designed specifically for Waldjugend-bas
 
 > [!IMPORTANT]
 > This README contains all the information from the original version by **Cryout Creations**, along with additional modifications and details specific to this child theme.
+
+> [!TIP]
+> This theme has been updated to work with an external [waldjugend-plugin](https://github.com/lwijshoff/waldjugend-plugin), which is not part of the original Nirvana theme. This plugin provides additional functionality and features that enhance the user experience on your Waldjugend-based website.
 
 ## License
 
