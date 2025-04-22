@@ -6,7 +6,7 @@
  * after.  Calls sidebar-footer.php for bottom widgets.
  *
  * @package waldjugend-theme
- * @since 1.4
+ * @since 1.5
  * @author Leonard Wijshoff
  */
 ?>	
