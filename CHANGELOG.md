@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 ## [Unreleased]
 
 
+<a name="v1.5.1"></a>
+## [v1.5.1] - 2025-04-22
+
 <a name="v1.5.0"></a>
 ## [v1.5.0] - 2025-04-19
 ### Bug Fixes
@@ -17,5 +20,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 <a name="v1.4.0"></a>
 ## v1.4.0 - 2025-01-24
 
-[Unreleased]: https://github.com/lwijshoff/waldjugend-theme/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/lwijshoff/waldjugend-theme/compare/v1.5.1...HEAD
+[v1.5.1]: https://github.com/lwijshoff/waldjugend-theme/compare/v1.5.0...v1.5.1
 [v1.5.0]: https://github.com/lwijshoff/waldjugend-theme/compare/v1.4.0...v1.5.0
