@@ -5,7 +5,7 @@
  * Author:       Leonard Wijshoff
  * Author URI:   https://github.com/lwijshoff
  * Template:     nirvana
- * Version:      1.5.1
+ * Version:      1.6.0
  * License:      GNU General Public License v3.0
  * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:  waldjugend-theme
@@ -138,6 +138,67 @@ body {
     margin-top: auto;
     z-index: auto;
     padding-bottom: 10px;
+    color: #ccc;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    margin-bottom: 1rem;
+}
+
+.footer-nav a {
+    color: #ccc;
+    margin: 0 0.75rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-nav a:hover {
+    color: #9fdf5d;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #ffffff;
+    margin: 1.5rem auto;
+    width: 90%;
+}
+
+.footer-centerpiece {
+    margin: 1.5rem 0;
+}
+
+.footer-logo {
+    display: block;
+    margin: 0 auto 0.5rem;
+    max-width: 120px;
+}
+
+.footer-slogan {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #aaa;
+}
+
+.footer-bottom {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: #9fdf5d;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
 }
 
 #sfooter-full {

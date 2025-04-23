@@ -23,30 +23,41 @@
         <!-- Custom Waldjugend implementation -->
         
 		<div id="footer2">
-		
-			<div id="footer2-inside">
-			    <!-- Custom Waldjugend implementation -->
-			    <div id="site-copyright">
-			        <a href="/">
-                        <img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="FooterDWJ" width="250">
-			        </a>
-                    <p align="center">
-                        <?php
-                            if (function_exists('waldjugend_generate_footer_html')) {
-                                $footerContent = waldjugend_generate_footer_html();
-                                echo $footerContent;
-                            } else {
-                                echo '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
-                            }
-                            // You are hereby permitted to change this with your own footer content or HTML.
-                        ?>
-                    </p>
-			    </div>
-			    
-			</div> <!-- #footer2-inside -->
-			
-		</div><!-- #footer2 -->
-		
+            <div class="footer-inner">
+                
+                <!-- Navigation Links -->
+                <nav class="footer-nav">
+                    <a href="/">Home</a>
+                    <a href="/features">Features</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/faqs">FAQs</a>
+                    <a href="/about">About</a>
+                </nav>
+
+                <!-- Divider -->
+                <hr class="footer-divider" />
+
+                <!-- Logo + Slogan -->
+                <div class="footer-centerpiece">
+                    <a href="/">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="Footer Logo" class="footer-logo" width="250">
+                    </a>
+                </div>
+
+                <!-- Dynamic copyright -->
+                <div class="footer-bottom">
+                    <?php
+                        if (function_exists('waldjugend_generate_footer_html')) {
+                            echo waldjugend_generate_footer_html();
+                        } else {
+                            echo '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+                        }
+                    ?>
+                </div>
+
+            </div>
+        </div>
+
 		<!-- Custom Waldjugend implementation -->
 
 	</footer><!-- #footer -->
