@@ -11,15 +11,19 @@
  * Text Domain:  waldjugend-theme
  */
 
-/* Root colors */
+/* =========================================================
+   Root Variables
+   ========================================================= */
 :root {
-    --dwj--color--green: #1B8700;
+    --dwj--color--green: #3D5A24;
     --dwj--color--gray: #293333;
 }
 
-/* Global Styles */
+/* =========================================================
+   Global Styles
+   ========================================================= */
 
-/* No background margin for mobile */
+/* Body defaults */
 body {
     background-position: left top;
     background-size: auto;
@@ -34,38 +38,62 @@ body {
     display: none;
 }
 
-/* Branding Section */
+/* Outline style buttons */
+.wp-block-button:where(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
+    color: var(--dwj--color--green);
+}
+
+/* =========================================================
+   Branding Section
+   ========================================================= */
 .branding {
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 10px;
     text-align: center;
+    background-color: rgba(238, 238, 238, 0.95); /* Color from Waldjugend.de */
+    margin-bottom: 10px;
 }
 
 .branding #header_logo h1 img {
     width: 25%;
+    margin-bottom: .3em;
 }
 
-/* Set color for "der Schutzgemeinschaft Deutscher Wald" */
-/*
+/* "der Schutzgemeinschaft Deutscher Wald" text */
 .branding #header_logo #header_description p:first-child {
-    color: #1B8700;
-    font-family: initial;
+    color: #3D5A24;
+    font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+    font-weight: 500;
 }
-*/
 
-/* Set color for header_description */
+/* Header description styling */
 .branding #header_logo #header_description p {
-    line-height: 1.2;
-    color: white;
-    background-color: rgba(41, 51, 51, 0.8);
+	/* color: black; */
+    line-height: 1.3;
+    font-size: 1.1em;
     width: fit-content;
     padding-left: 5px;
     padding-right: 5px;
     margin: 0 auto;
 }
 
-/* Search Form and Buttons */
+/* =========================================================
+   Main Content Area
+   ========================================================= */
+#main {
+    margin-top: 10px;
+    background-color: rgba(238, 238, 238, 0.95); /* Color from Waldjugend.de */
+}
+
+#content .entry-title,
+#content .entry-title a {
+    font-weight: 700;
+    text-rendering: optimizelegibility;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* =========================================================
+   Search Form
+   ========================================================= */
 .searchsubmit {
     height: 38px !important;
     width: 38px !important;
@@ -84,39 +112,26 @@ body {
     width: 38px !important;
 }
 
-/* Change color of outline styled button links */
-.wp-block-button:where(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
-    color: var(--dwj--color--green);
-}
-
-/* Container and Sidebar */
+/* =========================================================
+   Layout: Container & Sidebar
+   ========================================================= */
 #container.two-columns-right #secondary {
     padding-top: 20px;
     max-width: 400px;
     float: right;
 }
 
-/* Socials and Content */
+/* Socials left of content */
 #socials-left {
     float: right;
     padding-left: 5px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-#content .entry-title {
-    font-weight: 700;
-    text-rendering: optimizelegibility;
-    font-family: "Open Sans", sans-serif;
-}
-
-#content .entry-title a {
-    font-weight: 700;
-    text-rendering: optimizelegibility;
-    font-family: "Open Sans", sans-serif;
-}
-
-/* Widgets */
+/* =========================================================
+   Widgets
+   ========================================================= */
 .widget-container {
     padding: 10px;
 }
@@ -126,12 +141,15 @@ body {
     padding-left: 21px; /* Adjust padding as needed */
 }
 
-/* Footer */
+/* =========================================================
+   Footer
+   ========================================================= */
 #footer {
     bottom: 0;
-    position: relative; /* Stick to bottom of page */
+    position: relative;
     margin-top: auto;
     z-index: auto;
+    background-color: unset;
 }
 
 #footer2 {
@@ -144,23 +162,44 @@ body {
     display: none;
 }
 
-/* Miscellaneous */
+/* =========================================================
+   Miscellaneous
+   ========================================================= */
 .aufinsabenteuer {
     margin: 0.5em auto;
     width: 35%;
     display: block;
 }
 
-/* Media Queries */
+/* =========================================================
+   Media Queries
+   ========================================================= */
 
-/* Phone (Portrait) */
+/* ---------- Mobile adjustments ---------- */
+@media screen and (max-width:900px) {
+    .branding {
+        margin-bottom: 0;
+    }
+    #main {
+        margin-top: 0;
+    }
+}
+
+/* ---------- Phone (Portrait) ---------- */
 @media only screen and (orientation: portrait) {
     .entry-summary p {
         padding-left: 10px;
     }
+	.branding #header_logo h1 img {
+        width: 11%;
+		margin-bottom: .05em;
+    }
+	.branding #header_logo #header_description p {
+		font-size: 0.9em;
+	}
 }
 
-/* Desktop / Ipad / Tablet (Landscape) */
+/* ---------- Tablet/Desktop (Landscape) ---------- */
 @media only screen and (orientation: landscape) {
     .branding #header_logo h1 img {
         width: 10%;
@@ -169,12 +208,12 @@ body {
         width: 20%;
     }
     #access {
-        border-left-width: 0px;
+        border-left-width: 0;
         border-left-style: solid;
         border-left-color: var(--dwj--color--gray);
     }
     #access > .menu > ul {
-        margin-left: 0px !important;
+        margin-left: 0 !important;
     }
     .contentsearch {
         float: left;
@@ -184,14 +223,13 @@ body {
     }
     #container.two-columns-right #secondary {
         padding-top: 20px;
-    } /* Lower search bar for tablet view */
+    }
     #container.two-columns-right #content {
         width: calc(100% - 500px);
         float: left;
         display: flex;
         flex-direction: column;
     }
-    /* Add nature background for larger screens */
     body {
         margin-left: 10%;
         margin-right: 10%;
@@ -202,12 +240,12 @@ body {
     }
 }
 
-/* Landscape-oriented screens (1600px to 1919px) */
+/* ---------- Landscape screens: 1600px to 1919px ---------- */
 @media only screen and (orientation: landscape) and (min-width: 1600px) and (max-width: 1919px) {
     /* placeholder */
 }
 
-/* Landscape-oriented screens (1920px and larger) */
+/* ---------- Landscape screens: 1920px and up ---------- */
 @media only screen and (orientation: landscape) and (min-width: 1920px) {
     .branding #header_logo h1 img {
         width: 5%;
