@@ -149,7 +149,7 @@ body {
     position: relative;
     margin-top: auto;
     z-index: auto;
-    background-color: unset; /* wtf??? */
+    background-color: unset;
 }
 
 #footer2 {
