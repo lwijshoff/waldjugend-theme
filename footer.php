@@ -10,60 +10,44 @@
  * @author Leonard Wijshoff
  */
 ?>	
-    <div style="clear:both;"></div>
-	</div> <!-- #forbottom -->
-
-	<footer id="footer" role="contentinfo">
-		<div id="colophon">
-		
-			<?php get_sidebar( 'footer' );?>
+<div style="clear:both;"></div>
+	</div>
+		<footer id="footer" role="contentinfo">
+			<div id="colophon">
 			
-		</div><!-- #colophon -->
-        
-        <!-- Custom Waldjugend implementation -->
-        
-		<div id="footer2">
-            <div class="footer-inner">
-                
-                <!-- Navigation Links -->
-                <nav class="footer-nav">
-                    <a href="/">Home</a>
-                    <a href="/features">Features</a>
-                    <a href="/pricing">Pricing</a>
-                    <a href="/faqs">FAQs</a>
-                    <a href="/about">About</a>
-                </nav>
+				<?php get_sidebar( 'footer' );?>
+				
+			</div>
+			
+			<div id="claim">
+				<img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="Auf ins Abenteuer" width="250">
+			</div>
+			
+			<div id="main-footer">
+				<?php
+				if (function_exists('waldjugend_generate_main_footer_html')) {
+					echo waldjugend_generate_main_footer_html();
+				}
+				?>
+			</div>
 
-                <!-- Divider -->
-                <hr class="footer-divider" />
+			<div id="bottom-footer">
+				<div id="site-copyright">
+					<p align="center">
+						<?php
+						if (function_exists('waldjugend_generate_bottom_footer_html')) {
+							echo waldjugend_generate_bottom_footer_html();
+						} else {
+							echo '&copy; ' . date('Y') . ' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+						}
+						?>
+					</p>
+				</div>
+			</div>
 
-                <!-- Logo + Slogan -->
-                <div class="footer-centerpiece">
-                    <a href="/">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="Footer Logo" class="footer-logo" width="250">
-                    </a>
-                </div>
-
-                <!-- Dynamic copyright -->
-                <div class="footer-bottom">
-                    <?php
-                        if (function_exists('waldjugend_generate_footer_html')) {
-                            echo waldjugend_generate_footer_html();
-                        } else {
-                            echo '&copy; '.date('Y').' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
-                        }
-                    ?>
-                </div>
-
-            </div>
-        </div>
-
-		<!-- Custom Waldjugend implementation -->
-
-	</footer><!-- #footer -->
-
-	</div><!-- #main -->
-</div><!-- #wrapper -->
+		</footer>
+	</div>
+</div>
 
 <?php wp_footer(); ?>
 

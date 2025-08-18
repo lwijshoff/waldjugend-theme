@@ -1,3 +1,4 @@
+
 /**
  * Theme Name:   Waldjugend
  * Theme URI:    https://github.com/lwijshoff/waldjugend-theme/
@@ -5,7 +6,7 @@
  * Author:       Leonard Wijshoff
  * Author URI:   https://github.com/lwijshoff
  * Template:     nirvana
- * Version:      1.5.1
+ * Version:      2.0.0-alpha
  * License:      GNU General Public License v3.0
  * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:  waldjugend-theme
@@ -15,23 +16,30 @@
    Root Variables
    ========================================================= */
 :root {
-    --dwj--color--green: #3D5A24;
+    --dwj--color--white: #FFFFFF;
+    --dwj--color--black: #000000;
     --dwj--color--gray: #293333;
+    --dwj--color--dark-green: #3D5A24;
+    --dwj--color--forest-green: #1B8700;
+    --dwj--color--lime-green: #88BD27;
+    --dwj--color--acid-green: #B9CF14;
+    --dwj--color--blue: #0C3D84;
+    --dwj--color--light-blue: #78AFC8;
+    --dwj--color--white-blue: #408FB2;
+    --dwj--color--burnt-orange: #A95617;
+    --dwj--color--vibrant-orange: #DA5513;
+    --dwj--color--bright-orange: #EE732C;
+    --dwj--color--golden-yellow: #D5A913;
+    --dwj--color--pale-yellow: #F6F2A2;
 }
 
 /* =========================================================
    Global Styles
    ========================================================= */
 
-/* Body defaults */
-body {
-    background-position: left top;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin-left: 0;
-    margin-right: 0;
-}
+/* 
+    Body is inside functions.php, as the background image is dynamically set.
+*/
 
 /* Hide the topbar-inner div */
 #topbar {
@@ -40,7 +48,7 @@ body {
 
 /* Outline style buttons */
 .wp-block-button:where(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
-    color: var(--dwj--color--green);
+    color: var(--dwj--color--dark-green);
 }
 
 /* =========================================================
@@ -48,6 +56,7 @@ body {
    ========================================================= */
 .branding {
     padding: 10px;
+    padding-top: 5px;
     text-align: center;
     background-color: rgba(238, 238, 238, 0.95); /* Color from Waldjugend.de */
     margin-bottom: 10px;
@@ -55,7 +64,6 @@ body {
 
 .branding #header_logo h1 img {
     width: 25%;
-    margin-bottom: .3em;
 }
 
 /* "der Schutzgemeinschaft Deutscher Wald" text */
@@ -67,7 +75,7 @@ body {
 
 /* Header description styling */
 .branding #header_logo #header_description p {
-	/* color: black; */
+	color: var(--dwj--color--black);
     line-height: 1.3;
     font-size: 1.1em;
     width: fit-content;
@@ -106,6 +114,7 @@ body {
 .searchform input[type="search"] {
     height: 38px !important;
     padding-right: 38px !important;
+    /* margin-left: 0px !important; */ 
 }
 
 .searchform:after {
@@ -152,10 +161,78 @@ body {
     background-color: unset;
 }
 
-#footer2 {
-    margin-top: auto;
-    z-index: auto;
-    padding-bottom: 10px;
+#claim {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: -10px;
+    padding-right: -10px;
+    background-color: var(--dwj--color--dark-green);
+    clip-path: polygon(0% 0%, 100% 50px, 100% 100%, 0% calc(100% - 50px));
+}
+
+#main-footer {
+    margin-top: -51px;
+    padding-top: 50px;
+    background-color: var(--dwj--color--gray);
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#main-footer .footer-columns {
+    display: flex;
+    gap: 20px; /* distance between Kontakt and Links */
+}
+
+#main-footer .column {
+    flex: 0 0 auto; /* shrink to content width */
+    color: var(--dwj--color--white);
+    padding: 0 10px; /* optional inner padding */
+    box-sizing: border-box;
+}
+
+#main-footer .column h3 {
+    font-size: 1.25rem;
+}
+
+.main-footer-link {
+    color: #408FB2;
+}
+
+.main-footer-link:hover {
+    color: #78AFC8;
+}
+
+.main-footer-link:active {
+    background-color: unset;
+}
+
+.menu-line {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.menu-line::after {
+    content: "";
+    position: absolute;
+    left: 50%;               /* start in the middle */
+    bottom: 0;
+    width: 120%;             /* longer than text */
+    height: 2px;
+    background-color: var(--dwj--color--white);
+    border-radius: 1px;
+    transform: translateX(-50%); /* center the line */
+}
+
+#bottom-footer {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: var(--dwj--color--gray);
+    text-align: center;
 }
 
 #sfooter-full {
@@ -167,16 +244,17 @@ body {
    ========================================================= */
 .aufinsabenteuer {
     margin: 0.5em auto;
-    width: 35%;
+    width: 15%;
     display: block;
+    text-align: center;
 }
 
 /* =========================================================
-   Media Queries
+   Media Queries - Sorry for being a bit verbose here!
    ========================================================= */
 
-/* ---------- Mobile adjustments ---------- */
-@media screen and (max-width:900px) {
+/* ---------- Mobile adjustments (max-width: 900px) ---------- */
+@media screen and (max-width: 900px) {
     .branding {
         margin-bottom: 0;
     }
@@ -185,55 +263,96 @@ body {
     }
 }
 
-/* ---------- Phone (Portrait) ---------- */
+/* ---------- Phone Portrait ---------- */
 @media only screen and (orientation: portrait) {
     .entry-summary p {
         padding-left: 10px;
     }
-	.branding #header_logo h1 img {
-        width: 11%;
-		margin-bottom: .05em;
+
+    .branding #header_logo h1 img {
+        width: 14%;
+        margin-bottom: 0.05em;
     }
-	.branding #header_logo #header_description p {
-		font-size: 0.9em;
-	}
+
+    .branding #header_logo #header_description p {
+        font-size: 0.9em;
+    }
+
+    .aufinsabenteuer {
+        margin: 0.5em auto;
+        width: 35%;
+        display: block;
+    }
+
+    #claim {
+        padding: 20px 0;
+        clip-path: polygon(0% 0%, 100% 20px, 100% 100%, 0% calc(100% - 20px));
+    }
+
+    #main-footer {
+        margin-top: -21px; /* consider adjusting via padding instead */
+        padding-top: 30px;
+    }
+
+    #main-footer .footer-columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #main-footer .column {
+        flex: 1 1 300px;
+        max-width: 350px;
+        /* box-sizing: border-box;  -- remove if globally set */
+    }
 }
 
-/* ---------- Tablet/Desktop (Landscape) ---------- */
+/* ---------- Tablet/Desktop Landscape ---------- */
 @media only screen and (orientation: landscape) {
     .branding #header_logo h1 img {
-        width: 10%;
+        width: 12%;
+        margin-bottom: -5px;
     }
+
     .aufinsabenteuer {
-        width: 20%;
+        width: 15%;
     }
+
     #access {
         border-left-width: 0;
         border-left-style: solid;
         border-left-color: var(--dwj--color--gray);
     }
+
     #access > .menu > ul {
         margin-left: 0 !important;
     }
+
     .contentsearch {
         float: left;
     }
+
     #forbottom {
         padding-left: 10px;
     }
+
     #container.two-columns-right #secondary {
         padding-top: 20px;
     }
+
     #container.two-columns-right #content {
         width: calc(100% - 500px);
-        float: left;
         display: flex;
         flex-direction: column;
+        /* remove float: left; */
     }
+
     body {
         margin-left: 10%;
         margin-right: 10%;
     }
+
     #block-5,
     #block-6 {
         padding-left: 15px;
@@ -242,17 +361,19 @@ body {
 
 /* ---------- Landscape screens: 1600px to 1919px ---------- */
 @media only screen and (orientation: landscape) and (min-width: 1600px) and (max-width: 1919px) {
-    /* placeholder */
+    /* currently empty; remove if not needed */
 }
 
 /* ---------- Landscape screens: 1920px and up ---------- */
 @media only screen and (orientation: landscape) and (min-width: 1920px) {
     .branding #header_logo h1 img {
-        width: 5%;
+        width: 6%;
     }
+
     .aufinsabenteuer {
         width: 10%;
     }
+
     #forbottom {
         padding-top: 20px;
     }
