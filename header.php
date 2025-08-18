@@ -41,7 +41,7 @@
     				<div style="clear:both;"></div>
     				<a href="/">
         				<h1>
-                            <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-header.svg" alt="LogoDWJ">
+                            <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/design/header/Logo-header.svg" alt="LogoDWJ">
                         </h1>
                     </a>
                     <?php

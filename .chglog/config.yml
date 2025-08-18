@@ -11,7 +11,6 @@ options:
   sort: date
 
   commits:
-    # Include only real commits with a type prefix
     filters:
       Type:
         - feat
@@ -35,7 +34,6 @@ options:
       perf: Performance Improvements
 
   header:
-    # Parse "type: subject" from commit message
     pattern: "^(\\w*):\\s(.*)$"
     pattern_maps:
       - Type
@@ -51,8 +49,9 @@ options:
       - Fixes
 
   merges:
-    # Ignore merge commits entirely, so PR's commits are used instead
-    pattern: "^$"
+    pattern: "^Merge branch '(\\w+)'$"
+    pattern_maps:
+      - Source
 
   reverts:
     pattern: "^Revert \"([\\s\\S]*)\"$"
