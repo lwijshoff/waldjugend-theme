@@ -15,7 +15,7 @@
 <?php  cryout_meta_hook(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" /> <!-- Perhaps disable this legacy feautre...? Spam? -->
 <?php
  	cryout_header_hook();
 	wp_head(); ?>
@@ -41,12 +41,12 @@
     				<div style="clear:both;"></div>
     				<a href="/">
         				<h1>
-                            <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-header.png" alt="LogoDWJ">
+                            <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-header.svg" alt="LogoDWJ">
                         </h1>
                     </a>
                     <?php
                     if (function_exists('waldjugend_get_config')) {
-                        $headerTitle = waldjugend_get_config('horst');
+                        $headerTitle = waldjugend_get_config('waldjugend_group');
                     } else {
                         $headerTitle = 'Horst Musterstadt';
                     }

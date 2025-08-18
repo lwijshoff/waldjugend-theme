@@ -36,14 +36,14 @@ function waldjugend_enqueue_styles() {
     wp_enqueue_style('waldjugend-style', get_stylesheet_directory_uri() . '/assets/css/styles.css');
 
     // Get the background image URL dynamically (child theme's assets)
-    $background_url = get_stylesheet_directory_uri() . '/assets/background-scaled.jpg';
+    $background_url = get_stylesheet_directory_uri() . '/assets/background.jpg';
 
     // Inject the background image URL into the custom styles
     $custom_css = "
         body {
             background-image: url('$background_url');
             background-position: left top;
-            background-size: auto;
+            background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             margin-left: 0;
