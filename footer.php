@@ -20,7 +20,7 @@
 			</div>
 			
 			<div id="claim">
-				<img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/Logo-footer.png" alt="Auf ins Abenteuer" width="250">
+				<img class="aufinsabenteuer" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/design/footer/Logo-footer.png" alt="Auf ins Abenteuer" width="250">
 			</div>
 			
 			<div id="main-footer">

@@ -1,8 +1,8 @@
 /* Waldjugend login logo */
 h1 a {
-    background-image: url('../icons/Logo-header.png') !important;
-    height: 160px !important;
-    width: 160px !important;
-    background-size: 160px 160px !important;
+    background-image: url('../design/header/Logo-header.svg') !important;
+    height: 180px !important;
+    width: 180px !important;
+    background-size: 180px 180px !important;
     padding-bottom: 5px !important;
 }
