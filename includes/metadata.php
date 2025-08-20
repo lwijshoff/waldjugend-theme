@@ -30,4 +30,4 @@ wj_theme_define( 'WJ_PLUGIN_SLUG', 'waldjugend-plugin' );
 wj_theme_define( 'WJ_PLUGIN_GITHUB_REPO', WJ_PLUGIN_SLUG );
 wj_theme_define( 'WJ_PLUGIN_GITHUB_URL', WJ_GITHUB_URL . '/' . WJ_PLUGIN_GITHUB_REPO );
 wj_theme_define( 'WJ_PLUGIN_ZIP_TRANSIENT_KEY', 'waldjugend_latest_plugin_zip' );
-wj_theme_define( 'WJ_PLUGIN_VERSION', '2.0.0-gamma' ); // This must be set to ensure the plugin is compatible with the theme # IMPORTANT!
+wj_theme_define( 'WJ_PLUGIN_VERSION', '2.0.0' ); // TODO: This must be set to ensure the plugin is compatible with the theme # IMPORTANT!

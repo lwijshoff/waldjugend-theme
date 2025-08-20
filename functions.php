@@ -1,14 +1,24 @@
 <?php
+/*--------------------------------------------------------------
+# Includes
+--------------------------------------------------------------*/
 require_once get_stylesheet_directory() . '/includes/class-tgm-plugin-activation.php';
 require_once get_stylesheet_directory() . '/includes/tgm.php';
 require_once get_stylesheet_directory() . '/includes/metadata.php';
 
-// Load Parent Theme Styles
+
+/*--------------------------------------------------------------
+# Parent Theme Styles
+--------------------------------------------------------------*/
 function waldjugend_enqueue_parent_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 }
 add_action('wp_enqueue_scripts', 'waldjugend_enqueue_parent_styles');
 
+
+/*--------------------------------------------------------------
+# Custom Login Page
+--------------------------------------------------------------*/
 // Custom Login Styling
 function waldjugend_custom_login_styles() {
     echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/assets/css/waldjugendlogin.css" />';
@@ -21,7 +31,10 @@ function waldjugend_login_logo_url() {
 }
 add_filter('login_headerurl', 'waldjugend_login_logo_url');
 
-// Plugin/Theme Update Checker
+
+/*--------------------------------------------------------------
+# Plugin/Theme Update Checker
+--------------------------------------------------------------*/
 require 'includes/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
@@ -34,7 +47,10 @@ $UpdateChecker = PucFactory::buildUpdateChecker(
 // Set the branch that contains the stable release.
 $UpdateChecker->setBranch('main');
 
-// Enqueue Custom Styles with Dynamic Background Image
+
+/*--------------------------------------------------------------
+# Custom Styles (Dynamic Background)
+--------------------------------------------------------------*/
 function waldjugend_enqueue_styles() {
     // Enqueue the main stylesheet
     wp_enqueue_style('waldjugend-style', get_stylesheet_directory_uri() . '/assets/css/styles.css');
@@ -57,9 +73,12 @@ function waldjugend_enqueue_styles() {
 
     wp_add_inline_style('waldjugend-style', $custom_css);
 }
-
 add_action('wp_enqueue_scripts', 'waldjugend_enqueue_styles');
 
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
 // Remove Default Search Widget from Right Sidebar
 function waldjugend_remove_default_search_widget() {
     $sidebars_widgets = get_option('sidebars_widgets');
@@ -74,6 +93,10 @@ function waldjugend_remove_default_search_widget() {
 }
 add_action('after_switch_theme', 'waldjugend_remove_default_search_widget');
 
+
+/*--------------------------------------------------------------
+# Shortcodes
+--------------------------------------------------------------*/
 function waldjugend_theme_icon_shortcode($atts) {
     $atts = shortcode_atts([
         'src' => '',
