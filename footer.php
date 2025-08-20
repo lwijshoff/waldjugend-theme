@@ -38,7 +38,7 @@
 						if (function_exists('waldjugend_generate_bottom_footer_html')) {
 							echo waldjugend_generate_bottom_footer_html();
 						} else {
-							echo '&copy; ' . date('Y') . ' <a href="https://github.com/lwijshoff">Leonard Wijshoff</a>';
+							echo '&copy; ' . date('Y') . ' <a href="' . WJ_GITHUB_URL . '">' . WJ_AUTHOR_NAME . '</a>';
 						}
 						?>
 					</p>

@@ -1,4 +1,8 @@
 <?php
+require_once get_stylesheet_directory() . '/includes/class-tgm-plugin-activation.php';
+require_once get_stylesheet_directory() . '/includes/tgm.php';
+require_once get_stylesheet_directory() . '/includes/metadata.php';
+
 // Load Parent Theme Styles
 function waldjugend_enqueue_parent_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');

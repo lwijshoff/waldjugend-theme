@@ -33,7 +33,6 @@
 	<header id="header">
 		<div id="masthead">
 		<?php cryout_masthead_hook(); ?>
-		<!-- Custom Waldjugend implementation -->
 			<div class="branding" role="banner" > <!-- Used to be id="branding" -->
     			<div id=header_logo >
     				<?php cryout_branding_hook();?>
@@ -44,20 +43,20 @@
                             <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/design/header/Logo-header.svg" alt="LogoDWJ">
                         </h1>
                     </a>
-                    <?php
-                    if (function_exists('waldjugend_get_config')) {
-                        $headerTitle = waldjugend_get_config('waldjugend_group');
-                    } else {
-                        $headerTitle = 'Horst Musterstadt';
-                    }
-                    ?>
                     <div id="header_description">
                         <p>der Schutzgemeinschaft Deutscher Wald</p>
-                        <p><?php echo esc_html($headerTitle); ?></p>
+                        <p>
+							<?php
+							if (function_exists('waldjugend_header_text')) {
+								echo waldjugend_header_text();
+							} else {
+								echo 'Horst Musterstadt';
+							}
+							?>
+						</p>
                     </div>
                 </div>
 			</div><!-- #branding -->
-		<!-- Custom Waldjugend implementation -->
 			<button id="nav-toggle"><span>&nbsp;</span></button>
 			<nav id="<?php echo apply_filters( 'nirvana_mainnav_id', 'access' ) ?>" class="<?php echo apply_filters( 'nirvana_mainnav_class', 'jssafe' ) ?>" role="navigation">
 				<?php cryout_access_hook();?>
