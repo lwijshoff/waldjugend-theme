@@ -17,6 +17,14 @@ For complete details about the parent theme (**Nirvana** by **Cryout Creations**
 > [!TIP]
 > This theme has been updated to work with an external [waldjugend-plugin](https://github.com/lwijshoff/waldjugend-plugin), which is not part of the original Nirvana theme. This plugin provides additional functionality and features that enhance the user experience on your Waldjugend-based website.
 
+## How to install
+
+1. Go to the [latest release](./releases/latest).
+2. Download the **waldjugend-theme.zip** file.
+3. In your WordPress admin panel, navigate to **Appearance → Themes → Add New**.
+4. Click **Upload Theme**, choose the downloaded `waldjugend-theme.zip`, and click **Install Now**.
+5. After installation, click **Activate** to enable the theme.
+
 ## License
 
 This program is free software: you can redistribute it and/or modify
