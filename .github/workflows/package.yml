@@ -1,4 +1,4 @@
-name: "Package Release ZIP"
+name: Release Theme
 
 on:
   release:
@@ -7,17 +7,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create zip
+      - name: Prepare and zip
         run: |
-          cd ..
-          mv $GITHUB_REPOSITORY waldjugend-theme
+          mkdir dist
+          mv $GITHUB_WORKSPACE dist/waldjugend-theme
+          cd dist
           zip -r waldjugend-theme.zip waldjugend-theme -x "*.git*"
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
         with:
-          files: waldjugend-theme.zip
+          files: dist/waldjugend-theme.zip
