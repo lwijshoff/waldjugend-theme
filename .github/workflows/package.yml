@@ -1,4 +1,4 @@
-name: Release Theme
+name: Package Theme
 
 on:
   release:
@@ -17,7 +17,11 @@ jobs:
           mkdir dist
           mv $GITHUB_WORKSPACE dist/waldjugend-theme
           cd dist
-          zip -r waldjugend-theme.zip waldjugend-theme -x "*.git*"
+          zip -r waldjugend-theme.zip waldjugend-theme \
+            -x "*.git*" \
+            -x "waldjugend-theme/.github/*" \
+            -x "waldjugend-theme/.chglog/*" \
+            -x "waldjugend-theme/tests/*"
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
