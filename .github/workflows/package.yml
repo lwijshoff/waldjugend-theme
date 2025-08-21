@@ -9,25 +9,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare folder for ZIP
+      # Prepare package folder
+      - name: Prepare package folder
         run: |
-          mkdir waldjugend-theme
-          rsync -av --progress ./waldjugend-theme/ waldjugend-theme/ \
+          PACKAGE_DIR=waldjugend-theme
+          ZIP_NAME="waldjugend-theme-${GITHUB_REF##*/}.zip"
+
+          # Remove any old temp folder or ZIP
+          rm -rf $PACKAGE_DIR $ZIP_NAME
+
+          # Create temp folder
+          mkdir $PACKAGE_DIR
+
+          # Copy all project files into the temp folder while excluding unwanted files
+          rsync -av --progress ./ "$PACKAGE_DIR" \
             --exclude='.git*' \
             --exclude='.github/*' \
             --exclude='.chglog/*' \
-            --exclude='tests/*'
+            --exclude='tests/*' \
+            --exclude="$PACKAGE_DIR"
 
+      # Create ZIP archive
       - name: Create ZIP
         run: |
-          zip -r waldjugend-theme.zip waldjugend-theme
+          ZIP_NAME="waldjugend-theme-${GITHUB_REF##*/}.zip"
+          zip -r "$ZIP_NAME" waldjugend-theme
 
+      # Upload ZIP as release asset
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          files: waldjugend-theme.zip
+          files: "waldjugend-theme-${GITHUB_REF##*/}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
