@@ -22,7 +22,12 @@ jobs:
       - name: Prepare theme directory
         run: |
           mkdir -p waldjugend-theme
-          rsync -av --exclude='.git*' --exclude='.github' ./ waldjugend-theme/
+          rsync -av \
+            --exclude='.git*' \
+            --exclude='.github' \
+            --exclude='.chglog' \
+            --exclude='waldjugend-theme' \
+            ./ waldjugend-theme/
           ls -la waldjugend-theme
 
       - name: Create the zip file
