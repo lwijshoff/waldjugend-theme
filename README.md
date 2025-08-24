@@ -1,6 +1,7 @@
 # Waldjugend WordPress Theme
 
 ![GitHub Release](https://img.shields.io/github/v/release/lwijshoff/waldjugend-theme?display_name=release&style=for-the-badge&logo=github)
+![GitHub License](https://img.shields.io/github/license/lwijshoff/waldjugend-theme?style=for-the-badge)
 
 &copy; Copyright 2024-present **Leonard Wijshoff** \
 Based on [Nirvana WordPress Theme](https://www.cryoutcreations.eu/wordpress-themes/nirvana), &copy; Copyright 2014-present **Cryout Creations**
