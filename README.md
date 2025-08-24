@@ -56,7 +56,7 @@ All third-party assets included in this child theme are the property of their re
 - **Other Assets**  
     &copy; Copyright Leonard Wijshoff  
     These assets include background images and the theme screenshot used for display purposes.  
-    - Background image: https://github.com/lwijshoff/waldjugend-theme/blob/master/assets/background.jpg
+    - Background image: https://github.com/lwijshoff/waldjugend-theme/tree/main/assets/design/background/background.jpg
     - Screenshot: https://github.com/lwijshoff/waldjugend-theme/blob/master/screenshot.png
 
 
