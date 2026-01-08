@@ -50,6 +50,7 @@
 /* Outline style buttons */
 .wp-block-button:where(.is-style-outline) > .wp-block-button__link:not(.has-text-color) {
     color: var(--dwj--color--dark-green);
+    background: transparent;
 }
 
 /* =========================================================
