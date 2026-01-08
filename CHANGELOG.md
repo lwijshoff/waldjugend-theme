@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 ## [Unreleased]
 
 
+<a name="v2.0.3"></a>
+## [v2.0.3] - 2026-01-08
+### Bug Fixes
+- transparent background for buttons
+
+
 <a name="v2.0.2"></a>
 ## [v2.0.2] - 2025-08-24
 ### Bug Fixes
@@ -44,7 +50,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com) and this p
 <a name="v1.4.0"></a>
 ## v1.4.0 - 2025-01-24
 
-[Unreleased]: https://github.com/lwijshoff/waldjugend-theme/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/lwijshoff/waldjugend-theme/compare/v2.0.3...HEAD
+[v2.0.3]: https://github.com/lwijshoff/waldjugend-theme/compare/v2.0.2...v2.0.3
 [v2.0.2]: https://github.com/lwijshoff/waldjugend-theme/compare/v2.0.1...v2.0.2
 [v2.0.1]: https://github.com/lwijshoff/waldjugend-theme/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/lwijshoff/waldjugend-theme/compare/v2.0.0-gamma...v2.0.0
